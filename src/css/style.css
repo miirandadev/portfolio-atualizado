@@ -1,0 +1,315 @@
+html {
+    font-family: Roboto, sans-serif;
+}
+
+body {
+    background-color: #1F242D;
+}
+
+.header {
+    width: 100%;
+    padding: 20px;
+    z-index: 1;
+    position: fixed;
+    left: 0;
+    right: 0;
+    background-color:#1F242D;
+    border-bottom: 1px solid #3f3f3f;
+}
+
+.header .container-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 80%;
+    margin: auto;
+}
+
+.header .container-header nav ul {
+    display: flex;
+    gap: 40px;
+}
+
+.header .container-header nav ul li {
+    margin: 0 40px;
+}
+
+.header .container-header nav ul li a {
+    color: white;
+    font-size: 20px;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.header .container-header nav ul li a::after {
+    content: "";
+    width: 0;
+    height: 3px;
+    background-color: rgb(57, 143, 57);
+    position: absolute;
+    top: 25px;
+    left: 0;
+    display: block;
+    transition: width 0.5s ease-in-out;
+}
+
+.header .container-header nav ul li a:hover::after {
+    width: 70%;
+}
+
+.sobre {
+    display: flex;
+    max-width: 80%;
+    justify-content: space-around;
+    margin:auto;
+    position: relative;
+    align-items: center;
+    height: 80vh;
+    flex-wrap: wrap;
+}
+
+.sobre .desc {
+    max-width: 600px;
+}
+
+.sobre .desc h1 {
+    color: #fff;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.sobre .desc h1 span {
+    font-size: 35px;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px #ccc;
+}
+
+.sobre .desc p {
+    color: #bab9b9;
+    font-size: 25px;
+}
+
+.sobre .desc p .span-p {
+    color: rgb(57, 143, 57);
+}
+
+.sobre .img-lucas {
+    max-width: 350px;
+    box-shadow: 0 0 20px #3c3c3c;
+    border-radius: 3%;
+}
+
+.sobre .blur {
+    position: absolute;
+    right: 10%;
+    box-shadow: 0 0 1000px 50px rgb(57, 143, 57);
+}
+
+.sobre .seta {
+    position: absolute;
+    height: 35px;
+    bottom: 80px;
+    animation: downarrow 0.6s infinite alternate ease-in-out;
+}
+
+@keyframes downarrow {
+    0% {-webkit-transform: translateY(0); opacity: 0.4;}
+    100% {-webkit-transform: translateY(0.6em); opacity: 0.9;}
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.sobre .desc h1,
+.sobre .desc p,
+.sobre .img-lucas {
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.sobre .desc h1,
+.sobre .img-lucas {
+    animation-delay: 0.5s;
+}
+
+.sobre .desc p {
+    animation-delay: 1s;
+}
+
+.formacao {
+    max-width: 80%;
+    margin: auto;
+    margin-bottom: 5%;
+}
+
+.formacao h2 {
+    color: #bab9b9;
+    display: flex;
+    justify-content: center;
+}
+
+.formacao .container-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 30px;
+    gap: 10px;
+}
+
+.formacao .container-cards .card {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #3c3c3c;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.formacao .container-cards .card img {
+    width: 300px;
+    height: 200px;
+    justify-content: center;
+    box-shadow: 0 0 20px #3c3c3c;
+    display: flex;
+    margin-top: 5%;
+    border-radius: 10px;
+}
+
+.formacao .container-cards .card h3 {
+    color: rgb(57, 143, 57);
+    margin-top: 10px;
+}
+
+.formacao .container-cards .card p {
+    max-width: 90%;
+    text-align: center;
+    font-size: 18px;
+    color: #908f8f;
+    margin-top: 10px;
+    margin-bottom: 2%;
+}
+
+.projetos {
+    position: relative;
+    max-width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.projetos .title-projetos{
+    color: #bab9b9;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5%;
+}
+
+.carrossel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.card-carrossel {
+    min-width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.card-carrossel img {
+    width: 700px;
+    height: auto;
+}
+
+.projetos .card-carrossel h2 {
+    color: rgb(57, 143, 57);
+    margin-top: 3%;
+    font-size: 35px;
+}
+
+.projetos .card-carrossel p {
+    max-width: 500px;
+    margin: auto;
+    margin-top: 1%;
+    color: #ccc;
+    font-weight: 300;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+}
+
+#voltar {
+    right: 45%;
+    width: 100%;
+    transform: rotate(90deg);
+}
+
+#avancar {
+    left: 45%;
+    width: 100%;
+    transform: rotate(270deg);
+}
+
+#voltar img, #avancar img {
+    width: 35px;
+}
+
+.contatos {
+    border-top: 1px solid #3f3f3f;
+    padding: 30px;
+    margin-top: 3%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.contatos h2 {
+    color: #bab9b9;
+    margin-bottom: 1%;
+}
+
+.contatos h3 {
+    font-weight: 300;
+    color: #ccc;
+}
+
+.contatos h3 span {
+    color: rgb(57, 143, 57);
+}
+
+.contatos .redes {
+    margin-top: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.contatos .container-curriculo {
+    margin-top: 30px;
+}
+ 
+.contatos .curriculo {
+    background-color: rgb(57, 143, 57);
+    padding: 10px;
+    border-radius: 10px;
+    color: #ccc;
+}
+
+.contatos .redes a img{
+    margin: 0 20px;
+    border-radius: 5px;
+    background-color: white;
+}
